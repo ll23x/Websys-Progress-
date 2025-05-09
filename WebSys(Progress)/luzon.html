@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mountains of Luzon</title>
+  <link rel="stylesheet" href="luzon.css" />
+</head>
+<body>
+  <div class="background">
+    <aside class="side-label">LUZON</aside>
+    
+    <header>
+      <h1>MOUNTAINS</h1>
+      <span class="menu" id="menuBtn">
+        <span class="menu-bars">
+          <span class="bar bar1"></span>
+          <span class="bar bar2"></span>
+          <span class="bar bar3"></span>
+        </span>
+      </span>
+    </header>
+
+    <!-- Dropdown Menu - Should be outside header -->
+    <div class="dropdown-menu" id="dropdownMenu">
+      <a href="#">-------</a>
+      <a href="#">-------</a>
+      <a href="#">-------</a>
+      <a href="#">-------</a>
+      <a href="#">-------</a>
+    </div>
+
+    <main class="card-grid">
+      <!-- CARD 1 -->
+      <div class="card">
+        <div class="image-container" data-current="0">
+          <span class="arrow left">&#9664;</span>
+          <img src="map.png" class="carousel-image active">
+          <img src="mountain2.png" class="carousel-image">
+          <img src="mountain3.png" class="carousel-image">
+          <span class="arrow right">&#9654;</span>
+          <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+        <h2>Mt. Pulag (Benguet, Ifugao, Nueva Vizcaya)</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="card">...</div>
+
+      <!-- CARD 3 -->
+      <div class="card">...</div>
+
+      <!-- CARD 4 -->
+      <div class="card">...</div>
+
+      <!-- CARD 5 -->
+      <div class="card">
+        <div class="image-container" data-current="0">
+          <span class="arrow left">&#9664;</span>
+          <img src="map.png" class="carousel-image active">
+          <img src="sos.png" class="carousel-image">
+          <img src="sprained.png" class="carousel-image">
+          <span class="arrow right">&#9654;</span>
+          <div class="dots">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        </div>
+        <h2>Mt. Pulag (Benguet, Ifugao, Nueva Vizcaya)</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+
+      <!-- CARD 6 -->
+      <div class="card">...</div>
+
+      <!-- CARD 7 -->
+      <div class="card">...</div>
+
+      <!-- CARD 8 -->
+      <div class="card">...</div>
+    </main>
+  </div>
+
+  <script>
+    const imageContainers = document.querySelectorAll('.image-container');
+
+    imageContainers.forEach(container => {
+      const images = container.querySelectorAll('.carousel-image');
+      const dots = container.querySelectorAll('.dot');
+      const leftArrow = container.querySelector('.arrow.left');
+      const rightArrow = container.querySelector('.arrow.right');
+      let current = 0;
+
+      function showImage(index) {
+        images.forEach((img, i) => {
+          img.classList.toggle('active', i === index);
+        });
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+        container.dataset.current = index;
+      }
+
+      leftArrow.addEventListener('click', () => {
+        current = parseInt(container.dataset.current);
+        current = (current - 1 + images.length) % images.length;
+        showImage(current);
+      });
+
+      rightArrow.addEventListener('click', () => {
+        current = parseInt(container.dataset.current);
+        current = (current + 1) % images.length;
+        showImage(current);
+      });
+
+      showImage(current); // Initialize
+    });
+
+    // Menu dropdown toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdown = document.getElementById('dropdownMenu');
+
+    menuBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      menuBtn.classList.toggle('open');
+      dropdown.classList.toggle('show');
+    });
+
+    document.addEventListener('click', function(event) {
+      if (dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+        menuBtn.classList.remove('open');
+      }
+    });
+
+    dropdown.addEventListener('click', function(e){
+      e.stopPropagation();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url('image.png') no-repeat center center fixed;
+  background-size: cover;
+  color: #fff;
+}
+.navbar {
+  display: flex;
+  gap: 10px;
+  background: rgba(34, 49, 34, 0.85);
+  padding: 10px 20px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+.navbar button {
+  background: #4b5e3e;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.navbar button[disabled] {
+  background: #333;
+  color: #bbb;
+  cursor: not-allowed;
+}
+/* Hamburger menu animation */
+.menu {
+  margin-left: auto;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  position: relative;
+  z-index: 101;
+}
+.menu-bars {
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+.bar {
+  height: 4px;
+  width: 100%;
+  background: #fff;
+  border-radius: 2px;
+  transition: 0.3s;
+  position: relative;
+}
+/* Animate to X when menu is open */
+.menu.open .bar1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.menu.open .bar2 {
+  opacity: 0;
+}
+.menu.open .bar3 {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 30px;
+  background: rgba(34,49,34,0.95);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  padding: 16px 0;
+  z-index: 100;
+  min-width: 200px;
+}
+.dropdown-menu a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 28px;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: background 0.2s;
+}
+.dropdown-menu a:hover {
+  background: #4b5e3e;
+}
+.dropdown-menu.show {
+  display: block;
+}
+
+.region-label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: 2px;
+  z-index: 1;
+  background: #2b3b2b;
+  padding: 6px 24px;
+  border-radius: 4px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+  color: #fff;
+  border: 2px solid #222;
+  text-shadow: 2px 2px 2px #000;
+}
+@media (max-width: 900px) {
+  .map-container {
+    width: 98vw;
+    height: 70vw;
+    min-height: 220px;
+  }
+
+}
+
+main {
+  margin-top: 70px; /* Adjust to match header height */
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 40px;
+}
+
+.grid-item {
+  background-color: rgba(34,49,34,0.95);
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.grid-item:hover {
+  background-color: rgba(34,49,34,0.95);
+}
+
+.grid-item img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.grid-item h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
