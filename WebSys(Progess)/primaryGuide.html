@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Menu Button Example</title>
+  <link rel="stylesheet" href="primaryGuide.css">
+</head>
+<body>
+  <div class="navbar">
+    <button disabled>PRIMARY GUIDE</button>
+    <button onclick="location.href='firstAid.html'">FIRST AID</button>
+    <button onclick="location.href='directConnect.html'">DIRECTION & CONNECTION</button>
+    <button onclick="location.href='mountain.html'">MOUNTAINS</button>
+    <button onclick="location.href='journal.html'">JOURNAL</button>
+    <span class="menu" id="menuBtn">
+      <span class="menu-bars">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+      </span>
+    </span>
+  </div>
+  <div class="dropdown-menu" id="dropdownMenu">
+    <a href="#">-------</a>
+    <a href="#">-------</a>
+    <a href="#">-------</a>
+    <a href="#">-------</a>
+    <a href="#">-------</a>
+  </div>
+
+  <main>
+    <div class="grid-container">
+      <a href="createfire.html" class="grid-item">
+        <img src="fire.png" alt="Fire Icon">
+        <h3>CREATING FIRE USING BATTERY</h3>
+      </a>
+      <a href="water.html" class="grid-item">
+        <img src="water.png" alt="Water Icon">
+        <h3>PURIFY WATER WITHOUT FILTER</h3>
+      </a>
+      <a href="buildingshelt.html" class="grid-item">
+        <img src="shelter.png" alt="Shelter Icon">
+        <h3>BUILDING SHELTER</h3>
+      </a>
+    </div>
+  </main>
+  <script>
+    // Menu animation and dropdown logic
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdown = document.getElementById('dropdownMenu');
+
+    menuBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      menuBtn.classList.toggle('open');
+      dropdown.classList.toggle('show');
+    });
+
+    document.addEventListener('click', function(event) {
+      if (dropdown.classList.contains('show')) {
+        dropdown.classList.remove('show');
+        menuBtn.classList.remove('open');
+      }
+    });
+
+    dropdown.addEventListener('click', function(e){
+      e.stopPropagation();
+    });
+  </script>
+</body>
+</html>
