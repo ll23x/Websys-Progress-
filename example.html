@@ -1,0 +1,178 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <style>
+        .container {
+            width: 300px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .options {
+            display: none; /* Hidden by default */
+            margin-top: 20px;
+        }
+        .button {
+            margin: 10px;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="button" id="signUpBtn">Sign Up</button>
+        <div class="options" id="options">
+            <button class="button">Registered User: Sign In</button>
+            <button class="button">New Customer: Create Account</button>
+        </div>
+    </div>
+
+    <script>
+        const signUpBtn = document.getElementById("signUpBtn");
+        const options = document.getElementById("options");
+
+        signUpBtn.addEventListener("click", () => {
+            options.style.display = options.style.display === "none" ? "block" : "none";
+        });
+    </script>
+</body>
+</html> -->
+
+
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text on Arc</title>
+</head>
+<body>
+    <svg width="400" height="400">
+
+        <defs>
+            <path id="arc" d="M100,200 A100,100 0 0,1 300,200" />
+        </defs>
+
+        <path d="M100,200 A100,100 0 0,1 300,200" stroke="gray" fill="none" />
+
+
+        <text fill="black" font-size="24" font-weight="bold">
+            <textPath href="#arc">GUIDE TO WILDERNESS</textPath>
+        </text>
+    </svg>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide to Wilderness</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Guide to Wilderness</h1>
+        <nav>
+            <ul>
+                <li><a href="#first-aid">First Aid</a></li>
+                <li><a href="#directions">Directions & Connection</a></li>
+                <li><a href="#mountains">Mountains</a></li>
+                <li><a href="#journal">Journal</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="first-aid">
+            <h2>First Aid</h2>
+            <img src="https://via.placeholder.com/300" alt="First Aid Image">
+            <p>Learn how to stop bleeding fast, treat minor burns, and more.</p>
+        </section>
+        
+        <section id="directions">
+            <h2>Directions & Connection</h2>
+            <img src="https://via.placeholder.com/300" alt="Directions Image">
+            <p>Find north using a watch and make an SOS signal.</p>
+        </section>
+        
+        <section id="mountains">
+            <h2>Mountains</h2>
+            <img src="https://via.placeholder.com/300" alt="Mountains Image">
+            <p>Explore the beauty of Mt. Pulag and Mt. Apo.</p>
+        </section>
+        
+        <section id="journal">
+            <h2>Journal</h2>
+            <img src="https://via.placeholder.com/300" alt="Journal Image">
+            <p>Track your hiking progress and experiences.</p>
+        </section>
+        
+        <button id="actionButton">Get Started</button>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Guide to Wilderness</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Show Password</title>
+  <style>
+    .input-container {
+      position: relative;
+      width: 300px;
+    }
+
+    input[type="password"],
+    input[type="text"] {
+      width: 100%;
+      padding: 10px 40px 10px 15px;
+      font-size: 16px;
+      border-radius: 20px;
+      border: 2px solid black;
+    }
+
+    .toggle {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="input-container">
+  <input type="password" id="passwordInput" placeholder="Password">
+  <button class="toggle" onclick="togglePassword()">👁️</button>
+</div>
+
+<script>
+  function togglePassword() {
+    const input = document.getElementById("passwordInput");
+    input.type = input.type === "password" ? "text" : "password";
+  }
+</script>
+
+</body>
+</html>
